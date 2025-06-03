@@ -1,12 +1,19 @@
 let buttonClick = document.querySelector('.buttonClick');
+let buttonWin = document.querySelector('.buttonWin');
+
 let count = document.querySelector('.count');
 count.textContent = 100;
+let countWin = document.querySelector('.countWin');
+count.textContent = 100;
+countWin.textContent = localStorage.getItem('numWin');
+
 
 let launchButton = new Audio('./soundForCasino/Launch_Button.mp3');
 let twoCorrect = new Audio('./soundForCasino/2_Correct.mp3');
 let threeCorrect = new Audio('./soundForCasino/3_Correct.mp3');
 let finishGame = new Audio('./soundForCasino/Finish_Game.mp3');
-let gameOver =  new Audio('./soundForCasino/Game_Over.mp3');
+let gameOver = new Audio('./soundForCasino/Game_Over.mp3');
+let takeTheCash = new Audio('./soundForCasino/Take_the_cash.mp3');
 
 let imageGroup = document.querySelector('.imageGroup');
 
@@ -101,14 +108,22 @@ buttonClick.addEventListener('click', () => {
         if (num == 0) {
             // alert("You don't have coins!!!");
             gameOver.play();
-            setTimeout(()=>window.location.reload(),1500);
-            
+            setTimeout(() => window.location.reload(), 1500);
+
         }
         if (num == 5000) {
             alert("You won a lot of coins!!!");
         }
     }, 4800);
+    buttonWin.addEventListener('click', () => {
+        localStorage.setItem('numWin', num);
+        takeTheCash.play();
+        countWin.textContent = localStorage.getItem('numWin');
+        setTimeout(() => window.location.reload(), 1000);
+    });
 });
+
+
 
 
 imageGroup.append(image1);

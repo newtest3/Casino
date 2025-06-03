@@ -12,6 +12,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+.strBlock {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
 
 .imageGroup {
     border: 8px solid rgb(255, 127, 39);
@@ -59,16 +64,29 @@ img {
 
 
 /* ===================  Button Click ====================== */
+.buttonStart{
+
+}
+
+
 .buttonClick {
     border: 2px solid red;
     margin: 20px;
-    width: 400px;
+    width: 300px;
     height: 100px;
     border-radius: 5px;
     background-color: rgb(237, 124, 124);
-    margin-left: 100px;
 }
 
 .textLaunch {
     font-size: 80px;
+}
+
+.buttonWin {
+    font-size: 30px;
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    background-color: rgb(171, 252, 244);
+    border-radius: 5px;
 }
